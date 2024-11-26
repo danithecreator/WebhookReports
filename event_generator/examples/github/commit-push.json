@@ -1,0 +1,111 @@
+{
+    "ref": "refs/heads/develop",
+    "before": "460eebf3b5c9a78aed6f6a7613b56600dfdf0689",
+    "after": "62a62a56788db82b573964c4553a4c1f0e48d8a8",
+    "repository": {
+        "id": "c21b6edf-0f05-443d-9ac3-e3e5bbc876a8",
+        "node_id": "6364af74-c1b0-476f-8549-e7d9042a9854",
+        "name": "GH-GROUP-QUALITY",
+        "full_name": "paul91/group",
+        "private": true,
+        "owner": {
+            "login": "milleralyssa",
+            "id": 705255,
+            "node_id": "0eb8636a-3323-484c-ada2-373c513c3fa0",
+            "url": "https://www.powell.org/",
+            "type": "Organization",
+            "site_admin": false
+        },
+        "url": "http://miller.com/",
+        "created_at": "2024-07-10T21:00:20",
+        "updated_at": "2020-06-15T11:55:50",
+        "pushed_at": "2021-09-20T18:29:08",
+        "visibility": "private",
+        "watchers": 69,
+        "default_branch": "main",
+        "master_branch": "main",
+        "organization": "Johnson and Sons",
+        "custom_properties": {}
+    },
+    "pusher": {
+        "name": "richard22",
+        "email": "david41@example.net"
+    },
+    "organization": {
+        "login": "milleralyssa",
+        "id": 705255,
+        "node_id": "0eb8636a-3323-484c-ada2-373c513c3fa0",
+        "url": "https://www.powell.org/",
+        "description": null
+    },
+    "sender": {
+        "login": "nbaker",
+        "id": 321634,
+        "node_id": "3711c3c5-751f-477b-a6a5-14b4834fc910",
+        "gravatar_id": "",
+        "url": "http://alvarez.info/",
+        "type": "User"
+    },
+    "base_ref": null,
+    "compare": "http://jones-miller.net/",
+    "commits": [
+        {
+            "id": "03bb8eb30809150340efcf462e1e0435606cfd00",
+            "tree_id": "4bfc4f5986882b045fde869908b00cf2fa856020",
+            "distinct": true,
+            "message": "Approach head next miss.",
+            "timestamp": "2024-11-13T16:34:56.013709+00:00",
+            "url": "https://maldonado-bowman.com/",
+            "author": {
+                "name": "Sarah Alvarado",
+                "email": "blarson@example.net",
+                "username": "adam90"
+            },
+            "committer": {
+                "name": "Theresa Dickerson",
+                "email": "sharpcourtney@example.com",
+                "username": "vazquezjonathan"
+            },
+            "added": [
+                "/too/season.css",
+                "/particularly/animal.js",
+                "/happy/performance.xls"
+            ],
+            "removed": [
+                "/wish/box.flac"
+            ],
+            "modified": [
+                "/might/soldier.csv"
+            ]
+        }
+    ],
+    "head_commit": {
+        "id": "03bb8eb30809150340efcf462e1e0435606cfd00",
+        "tree_id": "4bfc4f5986882b045fde869908b00cf2fa856020",
+        "distinct": true,
+        "message": "Approach head next miss.",
+        "timestamp": "2024-11-13T16:34:56.013709+00:00",
+        "url": "https://maldonado-bowman.com/",
+        "author": {
+            "name": "Sarah Alvarado",
+            "email": "blarson@example.net",
+            "username": "adam90"
+        },
+        "committer": {
+            "name": "Theresa Dickerson",
+            "email": "sharpcourtney@example.com",
+            "username": "vazquezjonathan"
+        },
+        "added": [
+            "/too/season.css",
+            "/particularly/animal.js",
+            "/happy/performance.xls"
+        ],
+        "removed": [
+            "/wish/box.flac"
+        ],
+        "modified": [
+            "/might/soldier.csv"
+        ]
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "id": 574459,
+    "buildNumber": "develop_20221216.52",
+    "status": "completed",
+    "result": "failed",
+    "queueTime": "2022-12-16T07:06:18.512278Z",
+    "startTime": "2022-12-16T07:07:03.512278Z",
+    "finishTime": "2022-12-16T07:12:56.512278Z",
+    "url": "https://hall.info/",
+    "project": {
+        "id": "fcce3490-e2e9-4de8-9c46-471090d13470",
+        "name": "Vasquez-Clements",
+        "description": "Reactive mobile conglomeration",
+        "url": "http://smith-hopkins.com/",
+        "state": "wellFormed",
+        "revision": 4735,
+        "visibility": "private",
+        "lastUpdateTime": "2022-12-16T07:06:18.512278Z"
+    },
+    "priority": "normal",
+    "reason": "individualCI",
+    "requestedFor": {
+        "displayName": "Juan Peck",
+        "id": "566ba083-29aa-4360-a8c3-256e6372fa32"
+    },
+    "lastChangedDate": "2022-12-16T07:12:56.512278Z",
+    "repository": {
+        "id": "33d3b559-dde4-4e8e-b8c9-b549333be59f",
+        "name": "AZ-WIN-HUGE",
+        "url": "https://www.clark.net/",
+        "project": {
+            "id": "0b752721-2a49-490d-b8c0-f68edad3ea26",
+            "name": "miss",
+            "url": "http://thompson-jones.com/"
+        }
+    },
+    "retainedByRelease": false,
+    "triggeredByBuild": null
+}

@@ -1,0 +1,19 @@
+.env
+.venv
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environment directories
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+.idea/
+websocket_server.log
+providers/gitlab.py
+providers/obs_github.py
