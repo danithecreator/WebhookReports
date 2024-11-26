@@ -27,17 +27,7 @@ public class PipelineReactiveRepositoryAdapter extends ReactiveAdapterOperations
 
     @Override
     public Mono<Void> storePipelineData(PipelineModel pipelineModel) {
-        System.out.println(pipelineModel.getRepositoryId());
         return super.save(pipelineModel).then();
     }
 
-    @Override
-    public Mono<Long> getTotalPipelineSuccessfulRunsByDateRange(LocalDateTime startDate, LocalDateTime finishDate) {
-        return null;
-    }
-
-    @Override
-    public Mono<Long> getTotalPipelineFailedRunsByDateRange(LocalDateTime startDate, LocalDateTime finishDate) {
-        return null;
-    }
 }

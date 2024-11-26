@@ -25,25 +25,23 @@ public class CommitReportReactiveRepositoryAdapter
         super(repository, mapper, d -> mapper.mapBuilder(d, CommitModelResponse.CommitModelResponseBuilder.class).build());
     }
 
-
     @Override
     public Mono<Long> getTotalCommitsByDateRange(CommitModelRequest commitModelRequest) {
-        System.out.println(commitModelRequest.getInitialDate());
         return repository.totalCommitsByDateRange(commitModelRequest.getInitialDate(),
                 commitModelRequest.getFinishDate());
     }
 
     @Override
     public Flux<CommitModelResponse> getTopCommittersByDateRange(CommitModelRequest commitModelRequest) {
-        System.out.println(commitModelRequest);
         return repository.topCommittersByDateRange(commitModelRequest.getInitialDate(),
                         commitModelRequest.getFinishDate(),commitModelRequest.getTop())
-                .doOnNext(response -> System.out.println("Response from repository: " + response)) // Log cada elemento del resultado
                 .map(super::toEntity);
     }
 
     @Override
-    public Mono<CommitModelRequest> getTotalCommitsByCommittersNameInDateRange(CommitModelRequest commitModelRequest) {
-        return null;
+    public Mono<CommitModelResponse> getTotalCommitsByCommittersNameInDateRange(CommitModelRequest commitModelRequest) {
+        return repository.totalCommitsByCommitterName(commitModelRequest.getInitialDate(),
+                commitModelRequest.getFinishDate(),commitModelRequest.getCommittersName())
+                .map(super::toEntity);
     }
 }

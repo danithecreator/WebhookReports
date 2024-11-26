@@ -1,7 +1,5 @@
 package co.com.challenge.r2dbc.pullrequest;
 
-import co.com.challenge.model.commitmodel.CommitModel;
-import co.com.challenge.model.commitmodel.gateways.CommitModelRepository;
 import co.com.challenge.model.pullrequestmodel.PullRequestModel;
 import co.com.challenge.model.pullrequestmodel.gateways.PullRequestModelRepository;
 import co.com.challenge.r2dbc.helper.ReactiveAdapterOperations;
@@ -12,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDateTime;
-import java.util.List;
+
 
 @Repository
 public class PullRequestReactiveRepositoryAdapter extends ReactiveAdapterOperations<PullRequestModel,
@@ -32,8 +30,5 @@ public class PullRequestReactiveRepositoryAdapter extends ReactiveAdapterOperati
         return super.save(pullRequestModel).then();
     }
 
-    @Override
-    public Mono<Long> getTotalPullRequestCompletedByDateRange(LocalDateTime startDate, LocalDateTime finishDate) {
-        return null;
-    }
+
 }

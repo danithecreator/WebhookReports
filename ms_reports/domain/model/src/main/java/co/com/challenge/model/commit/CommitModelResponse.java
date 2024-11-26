@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class CommitModelResponse {
-    private String total;
+    private Integer total;
     private String committer;
 
 }

@@ -8,5 +8,4 @@ import java.time.LocalDateTime;
 
 public interface PullRequestModelRepository {
     Mono<Void> storePullRequestData(PullRequestModel pullRequestModel);
-    Mono<Long> getTotalPullRequestCompletedByDateRange(LocalDateTime startDate, LocalDateTime finishDate);
 }

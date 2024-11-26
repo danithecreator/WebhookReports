@@ -19,8 +19,7 @@ public class PostgreSQLConnectionPool {
     public int maxSize;
     @Value("${spring.r2dbc.pool.max-idle-time}")
     public int maxIdleTime;
-    @Value("${spring.application.name}")
-    private String name;
+
 
 	@Bean
 	public ConnectionPool getConnectionConfig(PostgresqlConnectionProperties properties) {
@@ -35,7 +34,6 @@ public class PostgreSQLConnectionPool {
 
         ConnectionPoolConfiguration poolConfiguration = ConnectionPoolConfiguration.builder()
                 .connectionFactory(new PostgresqlConnectionFactory(dbConfiguration))
-                .name(name)
                 .initialSize(initialSize)
                 .maxSize(maxSize)
                 .maxIdleTime(Duration.ofMinutes(maxIdleTime))

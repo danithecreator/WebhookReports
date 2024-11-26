@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 
 
 @RequiredArgsConstructor
-public class CommitsUseCase {
+public class CommitUseCase {
     private final CommitModelRepository commitModelRepository;
     private final RepositoryModelRepository repositoryModelRepository;
 

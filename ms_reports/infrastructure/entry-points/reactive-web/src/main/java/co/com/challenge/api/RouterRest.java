@@ -17,8 +17,9 @@ public class RouterRest {
         return nest(path(Constants.BASE_PATH),
                 route(POST(Constants.OPERATION_GET_TOP_COMMITTERS),handler::listenPOSTTopCommitters)
                         .andRoute(POST(Constants.OPERATION_GET_TOTAL_COMMITS),handler::listenPOSTTotalCommits)
-
-
+                        .andRoute(POST(Constants.OPERATION_GET_TOTAL_COMMITS_BY_COMMITTER),handler::listenPOSTTotalCommitsByCommitter)
+                        .andRoute(POST(Constants.OPERATION_GET_TOTAL_CLOSED_PR),handler::listenPOSTTotalClosedPr)
+                        .andRoute(POST(Constants.OPERATION_GET_TOTAL_PIPELINES_RUNS),handler::listenPOSTTotalPipelinesRuns)
         );
     }
 }

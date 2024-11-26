@@ -21,7 +21,7 @@ public class PullRequestDto {
     private String pullRequestId;
     @Column("pullrequest_url")
     private String url;
-    @Column("pullrequest_date")
+    @Column("pullrequest_closed_at")
     private LocalDateTime date;
     @Column("fk_repository_id")
     private String repositoryId;

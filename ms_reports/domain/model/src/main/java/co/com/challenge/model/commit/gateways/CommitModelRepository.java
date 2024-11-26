@@ -9,5 +9,5 @@ import reactor.core.publisher.Mono;
 public interface CommitModelRepository {
     Mono<Long> getTotalCommitsByDateRange(CommitModelRequest commitModelRequest);
     Flux<CommitModelResponse> getTopCommittersByDateRange(CommitModelRequest commitModelRequest);
-    Mono<CommitModelRequest> getTotalCommitsByCommittersNameInDateRange(CommitModelRequest commitModelRequest);
+    Mono<CommitModelResponse> getTotalCommitsByCommittersNameInDateRange(CommitModelRequest commitModelRequest);
 }

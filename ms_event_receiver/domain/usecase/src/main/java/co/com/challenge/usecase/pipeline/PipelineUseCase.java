@@ -18,10 +18,4 @@ public class PipelineUseCase {
         return repositoryModelRepository.storeRepository(repository)
                 .flatMap(repositoryId ->pipelineModelRepository.storePipelineData(pipelineModel)).then();
     }
-    public Mono<Long> getTotalPipelineSuccessfulRunsByDateRange(LocalDateTime startDate, LocalDateTime finishDate){
-        return pipelineModelRepository.getTotalPipelineSuccessfulRunsByDateRange(startDate,finishDate);
-    }
-    public Mono<Long> getTotalPipelineFailedRunsByDateRange(LocalDateTime startDate, LocalDateTime finishDate){
-        return pipelineModelRepository.getTotalPipelineFailedRunsByDateRange(startDate,finishDate);
-    }
 }

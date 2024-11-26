@@ -2,6 +2,7 @@ package co.com.challenge.model.commit;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 
 @Getter
@@ -12,8 +13,7 @@ import java.time.LocalDateTime;
 @ToString
 public class CommitModelRequest {
     private String committersName;
-    private String initialDate;
-    private String finishDate;
+    private OffsetDateTime initialDate;
+    private OffsetDateTime finishDate;
     private int top;
-
 }

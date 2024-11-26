@@ -7,7 +7,7 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 
 public interface CommitReportReactiveRepository extends ReactiveCrudRepository<CommitReportDto, Long>,
@@ -15,22 +15,27 @@ public interface CommitReportReactiveRepository extends ReactiveCrudRepository<C
 
     @Query("SELECT COUNT(*) AS total " +
             "FROM public.commit " +
-            "WHERE commit_date BETWEEN TO_TIMESTAMP(:initialDate || ' 00:00:00', 'DD/MM/YYYY HH24:MI:SS') \n" +
-            "             AND TO_TIMESTAMP(:finishDate || ' 23:59:59', 'DD/MM/YYYY HH24:MI:SS')"
-    )
-    Mono<Long> totalCommitsByDateRange(@Param("initialDate") String initialDate,
-                                       @Param("finishDate") String finishDate);
-
+            "WHERE commit_date BETWEEN :initialDate AND :finishDate")
+    Mono<Long> totalCommitsByDateRange(@Param("initialDate") OffsetDateTime initialDate,
+                                       @Param("finishDate") OffsetDateTime finishDate);
     @Query("SELECT commit_committer AS committer, COUNT(*) AS total " +
             "FROM public.commit " +
-            "WHERE commit_date BETWEEN TO_TIMESTAMP(:initialDate || ' 00:00:00', 'DD/MM/YYYY HH24:MI:SS') \n" +
-            "             AND TO_TIMESTAMP(:finishDate || ' 23:59:59', 'DD/MM/YYYY HH24:MI:SS')\n" +
+            "WHERE commit_date BETWEEN :initialDate AND :finishDate " +
             "GROUP BY commit_committer " +
             "ORDER BY total DESC " +
             "LIMIT :top")
     Flux<CommitReportDto> topCommittersByDateRange(
-            @Param("initialDate") String initialDate,
-            @Param("finishDate") String finishDate,
+            @Param("initialDate") OffsetDateTime initialDate,
+            @Param("finishDate") OffsetDateTime finishDate,
             @Param("top") Integer top);
+
+    @Query("SELECT commit_committer AS committer, COUNT(*) AS total " +
+            "FROM public.commit " +
+            "WHERE commit_date BETWEEN :initialDate AND :finishDate " +
+            "AND commit_committer = :committer " +
+            "GROUP BY commit_committer")
+    Mono<CommitReportDto> totalCommitsByCommitterName(@Param("initialDate") OffsetDateTime initialDate,
+                                                      @Param("finishDate") OffsetDateTime finishDate,
+                                                      @Param("committer") String committer);
 
 }

@@ -7,7 +7,7 @@ import co.com.challenge.sqs.listener.builder.RepositoryModelBuilder;
 import co.com.challenge.sqs.listener.dto.CommitDTO;
 import co.com.challenge.sqs.listener.dto.PipelineDTO;
 import co.com.challenge.sqs.listener.dto.PullRequesDTO;
-import co.com.challenge.usecase.commits.CommitsUseCase;
+import co.com.challenge.usecase.commits.CommitUseCase;
 import co.com.challenge.usecase.pipeline.PipelineUseCase;
 import co.com.challenge.usecase.pullrequest.PullRequestUseCase;
 
@@ -26,7 +26,7 @@ import java.util.function.Function;
 @Service
 @RequiredArgsConstructor
 public class SQSProcessor implements Function<Message, Mono<Void>> {
-    private final CommitsUseCase commitsUseCase;
+    private final CommitUseCase commitsUseCase;
     private final PipelineUseCase pipelineUseCase;
     private final PullRequestUseCase pullRequestUseCase;
 
