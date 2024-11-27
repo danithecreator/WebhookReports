@@ -36,6 +36,14 @@ if api_id:
         set_key(env_file, 'AG_PULLREQUEST', f'http://localstack:4566/restapis/{api_id}/dev/_user_request_/pullrequest')
         set_key(env_file, 'AG_PIPELINE', f'http://localstack:4566/restapis/{api_id}/dev/_user_request_/pipeline')
         print(f"Archivo {env_file} actualizado con el nuevo API ID.")
+
+        # Cargar las nuevas variables de entorno desde el archivo .env actualizado
+        load_dotenv(env_file)  # Aquí cargamos las nuevas variables
+
+        # Ahora puedes acceder a las nuevas variables de entorno
+        print(f"AG_COMMITS: {os.getenv('AG_COMMITS')}")
+        print(f"AG_PIPELINE: {os.getenv('AG_PIPELINE')}")
+
     except Exception as e:
         raise RuntimeError(f"Error al intentar actualizar el archivo {env_file}.") from e
 else:

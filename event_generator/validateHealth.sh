@@ -7,7 +7,7 @@ until curl -s http://localstack:4566/_localstack/health | grep "running"; do
 done
 
 # Ejecutar el script para obtener las URLs de LocalStack y configurar las variables de entorno
-
+python /code/getApiURL.py
 # Ejecutar el contenedor principal (worker.py)
 echo "Ejecutando worker.py..."
 exec python -u worker.py

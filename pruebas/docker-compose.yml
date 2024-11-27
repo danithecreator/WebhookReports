@@ -13,11 +13,14 @@ services:
   app:
     build:
       context: ../event_generator # Ruta donde tienes el Dockerfile para tu aplicación\
-    env_file:
-      - .env
-    container_name: myapp
     environment:
-      - LOCALSTACK_URL=http://localstack:4566 # URL de LocalStack
+      - AVG_TIME_BETWEEN_EVENTS_MS=1000
+      - STD_DV_TIME_BETWEEN_EVENTS_MS=200
+      - GITHUB_REPOS_ENABLED=true
+      - GITHUB_ACTIONS_ENABLED=false
+      - AZURE_REPOS_ENABLED=false
+      - AZURE_ACTIONS_ENABLED=false
+    container_name: myapp
     depends_on:
       - localstack # Asegúrate de que LocalStack esté disponible antes de iniciar la app
     networks:
