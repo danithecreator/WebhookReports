@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  localstack:
+    build:
+      context: ../infrastructure # Ruta donde tienes el Dockerfile para tu imagen LocalStack
+    container_name: localstack
+    ports:
+      - "4566:4566" # Puerto para LocalStack
+    networks:
+      - mynetwork
+
+  app:
+    build:
+      context: ../event_generator # Ruta donde tienes el Dockerfile para tu aplicación\
+    env_file:
+      - .env
+    container_name: myapp
+    environment:
+      - LOCALSTACK_URL=http://localstack:4566 # URL de LocalStack
+    depends_on:
+      - localstack # Asegúrate de que LocalStack esté disponible antes de iniciar la app
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

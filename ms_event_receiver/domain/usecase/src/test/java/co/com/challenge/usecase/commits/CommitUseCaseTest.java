@@ -16,13 +16,12 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class CommitUseCaseTest {
+class CommitUseCaseTest {
     @Mock
     private CommitModelRepository commitModelRepository;
     @Mock
@@ -47,5 +46,4 @@ public class CommitUseCaseTest {
                 .verify();
         verify(repositoryModelRepository).storeRepository(RepositoryProvider.buildRepositoryModel());
     }
-
 }

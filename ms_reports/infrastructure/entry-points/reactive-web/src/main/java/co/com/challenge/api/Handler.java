@@ -30,6 +30,7 @@ public class Handler {
                 .flatMap(request ->{
                     var requestModel = ModelBuilder.buildCommitModel(request);
                     return commitReportsUseCase.getTopCommittersByDateRange(requestModel)
+                            .doOnNext(System.out::println)
                             .collectList()
                             .flatMap(CommitResponseBuilder::buildTopCommittersResponse);
                 });

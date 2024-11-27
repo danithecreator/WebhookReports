@@ -116,42 +116,5 @@ echo "Despliegue creado con ID: $DEPLOYMENT_ID en el entorno 'dev'"
 API_BASE_URL="$ENDPOINT_URL/restapis/$API_ID/dev/_user_request_"
 echo "API Gateway desplegado en: $API_BASE_URL"
 
-# Obtener la ruta del directorio del script
-SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-
-# Ruta relativa al archivo .env desde el directorio del script
-ENV_FILE="$SCRIPT_DIR/../event_generator/.env"  # Ajusta esta ruta según tu estructura de carpetas
-
-# Define API_BASE_URL dinámicamente
-API_URL_COMMIT="$ENDPOINT_URL/restapis/$API_ID/dev/_user_request_/commit"
-API_URL_PULLREQUEST="$ENDPOINT_URL/restapis/$API_ID/dev/_user_request_/pullrequest"
-API_URL_PIPELINE="$ENDPOINT_URL/restapis/$API_ID/dev/_user_request_/pipeline"
-
-# Verifica si el archivo .env existe, si no, lo crea
-if [ ! -f "$ENV_FILE" ]; then
-  touch "$ENV_FILE"
-fi
-
-
-if grep -q '^AG_COMMITS=' "$ENV_FILE"; then
-  sed -i "s|^AG_COMMITS=.*|AG_COMMITS=${API_URL_COMMIT}|" "$ENV_FILE"
-else
-  echo "AG_COMMITS=${API_URL_COMMIT}" >> "$ENV_FILE"
-fi
-
-if grep -q '^AG_PULLREQUEST=' "$ENV_FILE"; then
-  sed -i "s|^AG_PULLREQUEST=.*|AG_PULLREQUEST=${API_URL_PULLREQUEST}|" "$ENV_FILE"
-else
-  echo "AG_PULLREQUEST=${API_URL_PULLREQUEST}" >> "$ENV_FILE"
-fi
-
-
-if grep -q '^AG_PIPELINE=' "$ENV_FILE"; then
-  sed -i "s|^AG_PIPELINE=.*|AG_PIPELINE=${API_URL_PIPELINE}|" "$ENV_FILE"
-else
-  echo "AG_CAG_PIPELINEOMMITS=${API_URL_PIPELINE}" >> "$ENV_FILE"
-fi
-
-
 
 

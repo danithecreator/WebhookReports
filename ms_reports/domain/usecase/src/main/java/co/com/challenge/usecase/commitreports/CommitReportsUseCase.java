@@ -17,7 +17,7 @@ public class CommitReportsUseCase {
         return commitModelRepository.getTotalCommitsByDateRange(commitModelRequest);
     }
 
-    public Flux<CommitModelResponse> getTopCommittersByDateRange(CommitModelRequest commitModelRequest){
+    public Flux<CommitModelResponse> getTopCommittersByDateRange(CommitModelRequest commitModelRequest) {
         return commitModelRepository.getTopCommittersByDateRange(commitModelRequest);
     }
     public Mono<CommitModelResponse> getTotalCommitsByCommittersNameInDateRange(CommitModelRequest commitModelRequest){
