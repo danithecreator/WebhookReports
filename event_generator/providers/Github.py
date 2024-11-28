@@ -184,6 +184,7 @@ class GithubProvider(Generator):
             "commits": commits,
             "head_commit": commits[0]
         }
+        print(f"holaaaaaaaa: {self.api_url_pull_request}")
         response = requests.post(self.api_url_commit, json=body)
         if response.status_code == 200:
             print("Evento push commits enviado correctamente.")

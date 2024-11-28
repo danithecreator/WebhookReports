@@ -10,4 +10,5 @@ done
 python /code/getApiURL.py
 # Ejecutar el contenedor principal (worker.py)
 echo "Ejecutando worker.py..."
+sleep 15
 exec python -u worker.py

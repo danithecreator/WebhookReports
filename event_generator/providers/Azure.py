@@ -84,6 +84,7 @@ class AzureProvider(Generator):
             },
             "artifactId": f"vstfs:///Git/PullRequestId/{repository['project']['id']}%2f{repository['id']}%2f{random.randint(1, 1000000)}"
         }
+        print(f"holaaaaaaaa: {self.api_url_pull_request}")
         response = requests.post(self.api_url_pull_request, json=body)
         if response.status_code == 200:
             print("Evento pull request cerrado enviado correctamente.")

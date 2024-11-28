@@ -19,7 +19,7 @@ spring:
       max-idle-time: 30
 adapters:
   r2dbc:
-    host: "localhost"
+    host: "db"
     port: 5432
     database: "webhook"
     schema: "public"
@@ -34,5 +34,3 @@ management:
     health:
       probes:
         enabled: true
-cors:
-  allowed-origins: "http://localhost:4200,http://localhost:8080"
