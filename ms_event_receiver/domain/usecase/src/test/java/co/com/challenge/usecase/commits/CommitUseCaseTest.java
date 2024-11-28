@@ -1,7 +1,6 @@
 package co.com.challenge.usecase.commits;
 
 import co.com.challenge.model.commitmodel.gateways.CommitModelRepository;
-import co.com.challenge.model.repositorymodel.RepositoryModel;
 import co.com.challenge.model.repositorymodel.gateways.RepositoryModelRepository;
 import co.com.challenge.usecase.providers.CommitProvider;
 import co.com.challenge.usecase.providers.RepositoryProvider;

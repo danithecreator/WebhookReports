@@ -26,7 +26,6 @@ public class PullRequestReactiveRepositoryAdapter extends ReactiveAdapterOperati
 
     @Override
     public Mono<Void> storePullRequestData(PullRequestModel pullRequestModel) {
-
         return super.save(pullRequestModel).then();
     }
 

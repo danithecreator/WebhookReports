@@ -1,9 +1,7 @@
 package co.com.challenge.sqs.listener.helper;
 
 import co.com.challenge.commonutils.DateHelper;
-import co.com.challenge.sqs.listener.builder.CommitterDTOBuilder;
 import co.com.challenge.sqs.listener.builder.RepositoryDTOBuilder;
-import co.com.challenge.sqs.listener.dto.CommitDTO;
 import co.com.challenge.sqs.listener.dto.RepositoryDTO;
 import com.fasterxml.jackson.databind.JsonNode;
 

@@ -26,7 +26,6 @@ public class CommitReactiveRepositoryAdapter extends ReactiveAdapterOperations<C
     @Override
     public Mono<Void> storeCommitsData(Flux<CommitModel> commitList) {
         return super.saveAllEntities(commitList)
-                .doOnComplete(() -> LOG.info("Commits guardados"))
                 .then();
     }
 

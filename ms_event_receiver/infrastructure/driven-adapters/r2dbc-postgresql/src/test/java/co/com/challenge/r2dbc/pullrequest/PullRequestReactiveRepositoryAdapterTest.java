@@ -1,9 +1,7 @@
 package co.com.challenge.r2dbc.pullrequest;
 
-import co.com.challenge.model.pipelinemodel.PipelineModel;
+
 import co.com.challenge.model.pullrequestmodel.PullRequestModel;
-import co.com.challenge.r2dbc.pipeline.PipelineReactiveRepository;
-import co.com.challenge.r2dbc.pipeline.PipelineReactiveRepositoryAdapter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +15,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class PullRequestReactiveRepositoryAdapterTest {
+class PullRequestReactiveRepositoryAdapterTest {
     @Mock
     private PullRequestReactiveRepository mockRepository;
 

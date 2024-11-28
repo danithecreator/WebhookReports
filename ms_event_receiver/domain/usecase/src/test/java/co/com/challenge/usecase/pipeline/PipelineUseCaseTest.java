@@ -3,8 +3,6 @@ package co.com.challenge.usecase.pipeline;
 import co.com.challenge.model.pipelinemodel.PipelineModel;
 import co.com.challenge.model.pipelinemodel.gateways.PipelineModelRepository;
 import co.com.challenge.model.repositorymodel.gateways.RepositoryModelRepository;
-import co.com.challenge.usecase.commits.CommitUseCase;
-import co.com.challenge.usecase.providers.CommitProvider;
 import co.com.challenge.usecase.providers.RepositoryProvider;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +11,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
@@ -22,7 +19,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class PipelineUseCaseTest {
+class PipelineUseCaseTest {
     @Mock
     private PipelineModelRepository pipelineModelRepository;
     @Mock

@@ -30,7 +30,6 @@ public class RepositoryReactiveRepositoryAdapter
     @Override
     public Mono<String> storeRepository(RepositoryModel repositoryModel) {
         return repository.findRepositoryByRepositoryId(repositoryModel.getRepositoryId())
-                .switchIfEmpty(super.save(repositoryModel).map(RepositoryModel::getRepositoryId)
-                        .doOnSuccess(success -> LOG.info("Repositorio guardado {}", repositoryModel.getName())));
+                .switchIfEmpty(super.save(repositoryModel).map(RepositoryModel::getRepositoryId));
     }
 }

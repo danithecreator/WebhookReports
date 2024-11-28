@@ -1,8 +1,6 @@
 package co.com.challenge.r2dbc.pullrequestreport;
 
 
-import co.com.challenge.model.commit.CommitModelRequest;
-import co.com.challenge.model.commit.CommitModelResponse;
 import co.com.challenge.model.pullrequest.PullRequestModelRequest;
 import co.com.challenge.model.pullrequest.PullRequestModelResponse;
 import co.com.challenge.model.pullrequest.gateways.PullRequestModelRepository;
@@ -11,7 +9,6 @@ import org.reactivecommons.utils.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 

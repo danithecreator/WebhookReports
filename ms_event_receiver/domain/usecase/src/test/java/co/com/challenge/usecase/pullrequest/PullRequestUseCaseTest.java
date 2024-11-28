@@ -1,10 +1,8 @@
 package co.com.challenge.usecase.pullrequest;
 
-import co.com.challenge.model.pipelinemodel.PipelineModel;
 import co.com.challenge.model.pullrequestmodel.PullRequestModel;
 import co.com.challenge.model.pullrequestmodel.gateways.PullRequestModelRepository;
 import co.com.challenge.model.repositorymodel.gateways.RepositoryModelRepository;
-import co.com.challenge.usecase.pipeline.PipelineUseCase;
 import co.com.challenge.usecase.providers.RepositoryProvider;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,7 +16,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class PullRequestUseCaseTest {
+class PullRequestUseCaseTest {
     @Mock
     private  PullRequestModelRepository pullRequestModelRepository;
     @Mock

@@ -1,7 +1,30 @@
 version: '3.8'
 
 services:
-  app:
+  localstack:
+    build:
+      context: ../infrastructure
+    container_name: localstack
+    ports:
+      - "4566:4566" 
+    networks:
+      - mynetwork
+  generator:
+    build:
+      context: ../event_generator 
+    environment:
+      - AVG_TIME_BETWEEN_EVENTS_MS=1000
+      - STD_DV_TIME_BETWEEN_EVENTS_MS=200
+      - GITHUB_REPOS_ENABLED=true
+      - GITHUB_ACTIONS_ENABLED=true
+      - AZURE_REPOS_ENABLED=true
+      - AZURE_ACTIONS_ENABLED=true
+    container_name: generator
+    depends_on:
+      - localstack 
+    networks:
+      - mynetwork
+  reports:
     build:
       context: ../ms_reports
       dockerfile: Dockerfile
@@ -9,6 +32,20 @@ services:
     ports:
       - "8081:8081" 
     depends_on:
+      - localstack
+      - db
+    networks:
+      - mynetwork
+  
+  receiver:
+    build:
+      context: ../ms_event_receiver
+      dockerfile: Dockerfile
+    container_name: ms_event_receiver
+    ports:
+      - "8080:8080" 
+    depends_on:
+      - localstack
       - db
     networks:
       - mynetwork

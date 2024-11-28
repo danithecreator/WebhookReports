@@ -25,6 +25,4 @@ public class CommitDeserializer extends JsonDeserializer<CommitDTO.Commit> {
         return new CommitDTO.Commit(id, date, committer,url);
     }
 
-
-
 }

@@ -9,7 +9,4 @@ import java.time.LocalDateTime;
 
 public interface CommitReactiveRepository extends ReactiveCrudRepository<CommitDto, Long>,
         ReactiveQueryByExampleExecutor<CommitDto> {
-
-    Mono<Long> countByDateBetween(LocalDateTime startDate, LocalDateTime endDate);
-
 }
