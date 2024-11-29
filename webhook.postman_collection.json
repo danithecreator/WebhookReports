@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "4e74adb2-e8b9-4cab-82e8-694cb09d87ea",
+		"name": "webhook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15614684"
+	},
+	"item": [
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Commits",
+					"item": [
+						{
+							"name": "Top Committers",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"initialDate\": \"2024-11-20T00:00:00Z\",\r\n    \"finishDate\": \"2024-12-25T23:59:59Z\",\r\n    \"top\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/webhook/report/get-top-committers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"webhook",
+										"report",
+										"get-top-committers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Total Commits",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"initialDate\": \"2024-11-20T00:00:00Z\",\r\n    \"finishDate\": \"2025-12-25T23:59:59Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/webhook/report/get-total-commits",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"webhook",
+										"report",
+										"get-total-commits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Total Commits By Committer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"initialDate\": \"2024-11-20T00:00:00Z\",\r\n    \"finishDate\": \"2024-12-25T23:59:59Z\",\r\n    \"committer\": \"Victor Avila\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/webhook/report/get-total-commits-by-committer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"webhook",
+										"report",
+										"get-total-commits-by-committer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Total PR",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"initialDate\": \"2024-11-20T00:00:00Z\",\r\n    \"finishDate\": \"2025-11-26T23:59:59Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/webhook/report/get-total-closed-pr",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"webhook",
+										"report",
+										"get-total-closed-pr"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Total Pipelines Runs",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"initialDate\": \"2024-10-01T00:00:00Z\",\r\n    \"finishDate\": \"2025-12-30T23:59:59Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/webhook/report/get-total-pipelines-runs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"webhook",
+										"report",
+										"get-total-pipelines-runs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
